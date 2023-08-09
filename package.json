@@ -1,0 +1,21 @@
+{
+  "name": "jmedia-server",
+  "version": "0.0.1",
+  "description": "This server is an API made to gather anime, manga, webtoons, movies... Our objective is to build a big database where everyone can have access.",
+  "main": "big database where everyone can have access.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js",
+    "build": "echo \"Error: no build specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Anstrum/jmedia-server.git"
+  },
+  "author": "Nanaka",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Anstrum/jmedia-server/issues"
+  },
+  "homepage": "https://github.com/Anstrum/jmedia-server#readme"
+}
