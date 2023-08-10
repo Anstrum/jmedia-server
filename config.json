@@ -4,5 +4,9 @@
       "dbUser": "root",
       "dbPassword": "",
       "dbName": "jmedia"
+    },
+
+    "api": {
+        "port": 3000
     }
   }
