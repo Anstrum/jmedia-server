@@ -1,2 +1,8 @@
 {
-}
+    "database": {
+      "dbHost": "localhost",
+      "dbUser": "root",
+      "dbPassword": "",
+      "dbName": "jmedia"
+    }
+  }
