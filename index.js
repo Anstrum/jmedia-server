@@ -1,5 +1,8 @@
 import * as database from './src/services/database/database.js';
 import * as server from './src/api/server.js'
 
-await database.init();
+
+console.log("\n\nSetup: start\n")
+await database.init(false);
 await server.start();
+

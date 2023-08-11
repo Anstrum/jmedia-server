@@ -1,21 +1,19 @@
 import express from 'express';
 import config from '../../config.json' assert { type: 'json' };
+import * as router from './router.js';
 
 const app = express();
 const dbConfig = config.api;
 
 
 async function start() {
-
-
     app.use(express.json());
 
-    app.get('/', (req, res) => {
-        res.send('Hello World!');
-    });
+    router.initRoutes(app);
 
     app.listen(dbConfig.port, () => {
-        console.log("Api ready: no error");
+        console.log("Setup: server")
+        console.log("no error\n")
     });
 }
 
