@@ -6,16 +6,11 @@ const app = express();
 const dbConfig = config.api;
 
 
-async function start() {
-    app.use(express.json());
+app.use(express.json());
 
-    router.initRoutes(app);
+router.initRoutes(app);
 
-    app.listen(dbConfig.port, () => {
-        console.log("Setup: server")
-        console.log("no error\n")
-    });
-}
-
-
-export { start };
+app.listen(dbConfig.port, () => {
+    console.log("\nSetup: server")
+    console.log("no error\n")
+});

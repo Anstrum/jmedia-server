@@ -1,8 +1,22 @@
 import * as database from './src/services/database/database.js';
-import * as server from './src/api/server.js'
+import * as readline from 'readline';
+import { Worker, isMainThread, parentPort } from 'worker_threads';
+import { cli } from './src/cli/cli.js';
 
-
-console.log("\n\nSetup: start\n")
 await database.init(false);
-await server.start();
 
+const worker = await new Worker('./src/api/server.js');
+
+setTimeout(() => {
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    }); 
+    rl.setPrompt('Server reading: '); // Définir l'invite de commande
+
+    rl.on('line', (input) => {
+        cli(input);
+        rl.prompt();
+    });
+    rl.prompt();
+}, 300);

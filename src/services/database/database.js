@@ -19,7 +19,7 @@ async function init(fillWithFakeData) {
             await fillDatabase(connection)
             console.log("Database ready: fake data inserted")
         }
-        console.log("Setup: database")
+        console.log("\nSetup: database")
         console.log("no error\n")
     } catch (error) {
         console.error('Erreur de connexion à la base de données :', error);
