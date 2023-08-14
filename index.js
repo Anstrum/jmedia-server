@@ -1,11 +1,13 @@
-import * as database from './src/services/database/database.js';
 import * as readline from 'readline';
-import { Worker, isMainThread, parentPort } from 'worker_threads';
 import { cli } from './src/cli/cli.js';
+import { Server, Database } from './src/global-state.js';
 
-await database.init(false);
+Server.getInstance();
+Database.getInstance();
 
-const worker = await new Worker('./src/api/server.js');
+await Database.init();
+await Server.start();
+
 
 setTimeout(() => {
     const rl = readline.createInterface({
